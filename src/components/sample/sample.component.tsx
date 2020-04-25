@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 // @ts-ignore
 import { connect } from 'react-redux';
+import { IAppState } from '../../redux/root-reducer';
+
 import { setCurrentFLag } from '../../redux/flag/flag.actions';
 import { selectCurrentFlag } from '../../redux/flag/flag.selectors';
-import { IAppState } from '../../redux/root-reducer';
 
 interface Props {
     flag: string;

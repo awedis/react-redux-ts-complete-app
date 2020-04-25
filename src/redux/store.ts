@@ -8,7 +8,8 @@ import rootReducer from './root-reducer';
 
 import thunk from 'redux-thunk';
 
-const middlewares = [logger, thunk];
+// const middlewares = [logger, thunk];
+const middlewares = [thunk];
 
 export const store: any = createStore(rootReducer, composeWithDevTools(
     applyMiddleware(...middlewares)
