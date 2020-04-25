@@ -26,7 +26,7 @@ const UsersApiCall: FC<Props> = ({ usersData, setUsers }) => {
         <>
             {/* <button onClick={() => setUsers()}>Get Api</button> */}
 
-            {usersData.loading &&
+            {usersData.users.length == 0 && usersData.loading &&
                 <Loader />
             }
 
