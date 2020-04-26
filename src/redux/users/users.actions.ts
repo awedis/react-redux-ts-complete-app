@@ -2,7 +2,7 @@ import { UsersActionTypes } from './users.types';
 import { mocks } from '../mocks';
 import { fetchUsersUrl } from '../../api/api';
 
-const {FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USER_FAILURE  } = UsersActionTypes;
+const { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USER_FAILURE } = UsersActionTypes;
 
 export const fetchUsersRequest = () => ({
     type: FETCH_USERS_REQUEST

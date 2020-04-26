@@ -8,17 +8,18 @@ const INITIAL_STATE = {
 
 interface IState {
     loading: Boolean,
-    users: Array<Object>,
+    users: Array<{ id: number, name: string }>,
     error: String,
 }
 
-interface IAction {
+interface IAction<T> {
     type: String;
-    payload: Object
+    payload: T
 }
 
-const usersReducer = (state = INITIAL_STATE, action: IAction): any => {
-    switch (action.type) {
+const usersReducer = (state = INITIAL_STATE, action: IAction<any>): IState => {
+    const { type, payload } = action;
+    switch (type) {
         case UsersActionTypes.FETCH_USERS_REQUEST:
             return {
                 ...state,
@@ -27,14 +28,14 @@ const usersReducer = (state = INITIAL_STATE, action: IAction): any => {
         case UsersActionTypes.FETCH_USERS_SUCCESS:
             return {
                 loading: false,
-                users: action.payload,
+                users: payload,
                 error: ''
             }
         case UsersActionTypes.FETCH_USER_FAILURE:
             return {
                 loading: false,
                 users: [],
-                error: action.payload
+                error: payload
             }
         default:
             return state;
