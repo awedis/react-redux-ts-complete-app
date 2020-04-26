@@ -1,0 +1,16 @@
+{
+    "posts": [
+      { "id": 1, "title": "Clean Code", "description": "Think twice code once, our code should be clean" },
+      { "id": 2, "title": "AWS", "description": "Amazon Web Services - cloud computing" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 },
+      { "id": 2, "body": "comment to the second post", "postId": 2 }
+    ],
+    "users": [
+        { "id": 1, "name": "David" },
+        { "id": 2, "name": "Jack" },
+        { "id": 3, "name": "Leo" },
+        { "id": 4, "name": "Jo" }
+    ]
+  }

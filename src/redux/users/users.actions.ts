@@ -1,33 +1,28 @@
 import { UsersActionTypes } from './users.types';
 import { mocks } from '../mocks';
-import axios from 'axios';
+import { fetchUsersUrl } from '../../api/api';
 
-export const fetchUsersRequest = () => {
-    return {
-        type: UsersActionTypes.FETCH_USERS_REQUEST
-    }
-}
+const {FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USER_FAILURE  } = UsersActionTypes;
 
-const fetchUsersSuccess = (users: any) => {
-    return {
-        type: UsersActionTypes.FETCH_USERS_SUCCESS,
-        payload: users
-    }
-}
+export const fetchUsersRequest = () => ({
+    type: FETCH_USERS_REQUEST
+})
 
-const fetchUsersFailure = (error: any) => {
-    return {
-        type: UsersActionTypes.FETCH_USER_FAILURE,
-        payload: error
-    }
-}
+const fetchUsersSuccess = (users: Array<object>) => ({
+    type: FETCH_USERS_SUCCESS,
+    payload: users
+})
+
+const fetchUsersFailure = (error: string) => ({
+    type: FETCH_USER_FAILURE,
+    payload: error
+})
 
 export const fetchUsers = () => {
-    console.log('----fetchUsers');
     return (dispatch: any) => {
         dispatch(fetchUsersRequest())
         setTimeout(() => {
-            axios.get('https://jsonplaceholder.typicode.com/comments')
+            fetchUsersUrl()
                 .then(response => {
                     const users = response.data
                     dispatch(fetchUsersSuccess(users))

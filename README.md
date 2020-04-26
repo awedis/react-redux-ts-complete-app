@@ -7,3 +7,7 @@
   - ReactJS
   - Redux
   - Typescript
+
+#### :office: For Database we gonna use json-server:
+  - db.json will hold all our data
+  - npx json-server -p 4000 db.json
