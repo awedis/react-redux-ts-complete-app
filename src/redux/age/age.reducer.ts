@@ -13,12 +13,12 @@ interface IAction<T> {
     payload: T
 }
 
-const { AGE_UP, AGE_DOWN } = AgeActionTypes;
+const { AGE_UP, AGE_DOWN, AGE_UP_ASYNC } = AgeActionTypes;
 
 const ageReducer = (state = INITIAL_STATE, action: IAction<any>): IState => {
     const { type, payload } = action;
     switch (type) {
-        case AGE_UP:
+        case AGE_UP_ASYNC:
             return {
                 ...state,
                 age: state.age += payload
