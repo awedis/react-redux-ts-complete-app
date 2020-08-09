@@ -8,11 +8,24 @@ interface Props {
     getStudents: any;
 }
 
+interface IStudent {
+    id: string;
+    name: string;
+}
+
 const Students: FC<Props> = ({ students, getStudents }) => {
     console.log(students);
     return (
         <>
             <button onClick={() => getStudents()}>Get Students</button>
+
+            <div>
+                {students.payload.data.map((item: IStudent) =>
+                    <div key={item.id}>
+                        {item.name}
+                    </div>
+                )}
+            </div>
         </>
     );
 }
