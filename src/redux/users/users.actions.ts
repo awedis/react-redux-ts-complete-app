@@ -1,6 +1,5 @@
 import { UsersActionTypes } from './users.types';
-import { mocks } from '../mocks';
-import { fetchUsersUrl } from '../../api/api';
+import getUsers from '../../api/users/getUsers.api';
 
 const { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USER_FAILURE } = UsersActionTypes;
 
@@ -22,7 +21,7 @@ export const fetchUsers = () => {
     return (dispatch: any) => {
         dispatch(fetchUsersRequest())
         setTimeout(() => {
-            fetchUsersUrl()
+            getUsers()
                 .then(response => {
                     const users = response.data
                     dispatch(fetchUsersSuccess(users))

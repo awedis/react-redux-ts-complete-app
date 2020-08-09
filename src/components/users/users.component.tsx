@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from 'react';
-// @ts-ignore
 import { connect } from 'react-redux';
 import { IAppState } from '../../redux/root-reducer';
 import { fetchUsers } from '../../redux/users/users.actions';

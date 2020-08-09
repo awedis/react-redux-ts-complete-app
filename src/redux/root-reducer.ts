@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import flagReducer from './flag/flag.reducer';
 import userReducer from './users/users.reducer';
 import ageReducer from './age/age.reducer';
+import studentsReducer from './students/students.reducer';
 
 const persistConfig = {
     key: 'root',
@@ -14,7 +15,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
     flag: flagReducer,
     users: userReducer,
-    age: ageReducer
+    age: ageReducer,
+    students: studentsReducer,
 });
 
 export type IAppState = ReturnType<typeof rootReducer>;
