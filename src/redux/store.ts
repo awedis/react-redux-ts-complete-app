@@ -5,8 +5,10 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './root-reducer';
 import thunk from 'redux-thunk';
 
-import { watchAgeUp } from '../sagas/saga';
-import rootSaga from '../redux/students/students.saga';
+// import { watchAgeUp } from '../sagas/saga';
+// import rootSaga from '../redux/students/students.saga';
+
+import sagas from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -18,7 +20,7 @@ export const store: any = createStore(
         applyMiddleware(...middlewares)
     )
 );
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(sagas);
 
 export const persistor = persistStore( store );
 

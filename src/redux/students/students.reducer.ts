@@ -1,5 +1,6 @@
-import { StudentsActionTypes } from './students.types';
-const { RECEIVE_STUDENTS } = StudentsActionTypes;
+import { 
+    RECEIVE_STUDENTS
+} from '../actions';
 
 const studentsReducer = (state = {}, action: any) => {
     const { type, payload } = action;

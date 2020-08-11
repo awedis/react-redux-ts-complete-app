@@ -1,4 +1,0 @@
-export enum StudentsActionTypes {
-    REQUEST_STUDENTS = 'REQUEST_STUDENTS',
-    RECEIVE_STUDENTS = 'RECEIVE_STUDENTS',
-}

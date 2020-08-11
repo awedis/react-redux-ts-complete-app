@@ -1,9 +1,7 @@
 import { call, put, fork, all, takeLatest } from 'redux-saga/effects';
-import { StudentsActionTypes } from './students.types';
+import { REQUEST_STUDENTS } from '../actions';
 import { receiveApi } from './students.actions';
 import getStudents from '../../api/students/getStudents.api';
-
-const { REQUEST_STUDENTS } = StudentsActionTypes;
 
 function* getApiStudents(action: any) {
     try {

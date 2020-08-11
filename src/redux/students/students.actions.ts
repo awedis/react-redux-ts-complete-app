@@ -1,6 +1,7 @@
-import { StudentsActionTypes } from './students.types';
-
-const { REQUEST_STUDENTS, RECEIVE_STUDENTS } = StudentsActionTypes;
+import { 
+    REQUEST_STUDENTS,
+    RECEIVE_STUDENTS 
+} from '../actions';
 
 const requestApi = () => ({
     type: REQUEST_STUDENTS
