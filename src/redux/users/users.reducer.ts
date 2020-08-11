@@ -17,21 +17,23 @@ interface IAction<T> {
     payload: T
 }
 
+const { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USER_FAILURE } = UsersActionTypes;
+
 const usersReducer = (state = INITIAL_STATE, action: IAction<any>): IState => {
     const { type, payload } = action;
     switch (type) {
-        case UsersActionTypes.FETCH_USERS_REQUEST:
+        case FETCH_USERS_REQUEST:
             return {
                 ...state,
                 loading: true
             }
-        case UsersActionTypes.FETCH_USERS_SUCCESS:
+        case FETCH_USERS_SUCCESS:
             return {
                 loading: false,
                 users: payload,
                 error: ''
             }
-        case UsersActionTypes.FETCH_USER_FAILURE:
+        case FETCH_USER_FAILURE:
             return {
                 loading: false,
                 users: [],
