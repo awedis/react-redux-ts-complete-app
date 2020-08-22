@@ -20,6 +20,7 @@ const App = () => {
             <Route path="/" exact render={props => <Main {...props} />} />
             <Route path="/app" render={props => <ViewApp {...props} />} />
             <Route path='/error' exact render={props => <ViewError {...props} />} />
+            <Redirect to='/error' />
           </Switch>
         </Router>
       </Suspense>
