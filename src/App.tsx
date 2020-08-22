@@ -1,17 +1,28 @@
-import React from 'react';
-import Sample from './components/sample/sample.component';
-import UserApiCall from './components/users/users.component';
-import Age from './components/age/age.component';
-import Students from './components/students/students.component';
+import React, { FC, Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-function App() {
+const Main = lazy(() =>
+    import('./views')
+);
+const ViewApp = lazy(() => 
+  import('./views/app')
+);
+const ViewError = lazy(() =>
+  import('./views/error')
+);
+
+const App = () => {
   return (
     <div>
-      <Sample />
-      <UserApiCall />
-      <Age />
-      <hr/>
-      <Students />
+      <Suspense fallback={<div className="loading" />}>
+        <Router>
+          <Switch>
+            <Route path="/" exact render={props => <Main {...props} />} />
+            <Route path="/app" render={props => <ViewApp {...props} />} />
+            <Route path='/error' exact render={props => <ViewError {...props} />} />
+          </Switch>
+        </Router>
+      </Suspense>
     </div>
   );
 }
