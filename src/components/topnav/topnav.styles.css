@@ -1,0 +1,15 @@
+.topnav {
+    background-color: #363636;
+    padding: 20px;
+}
+
+.topnav .link {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #ABA7A7;
+    text-decoration: none;
+}
+
+.active {
+    color: #FFFFFF !important;
+}

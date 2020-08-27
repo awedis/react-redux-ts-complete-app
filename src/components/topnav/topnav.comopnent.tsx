@@ -1,11 +1,17 @@
 import React from 'react';
+import './topnav.styles.css';
+
 import { NavLink } from 'react-router-dom';
+import navBar from '../../constants/navBar';
 
 const TopNav = () => {
     return (
-        <div>
-            <NavLink to='./dashboard' activeStyle={{fontWeight: 'bold', color: 'red'}}>Dashboard</NavLink>
-            <NavLink to='./home' activeStyle={{fontWeight: 'bold', color: 'red'}}>Home</NavLink>
+        <div className='topnav'>
+            {navBar.map((item, key) => {
+                return (
+                    <NavLink to={item.link} key={key} activeClassName='active' className='link'>{item.text}</NavLink>
+                )
+            })}
         </div>
     )
 }
